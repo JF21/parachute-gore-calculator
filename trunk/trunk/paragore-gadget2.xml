@@ -25,7 +25,9 @@ function calculate()
         tableData += "<TD>" + Math.round( ((Math.PI/2)*(diameter/numGores)*Math.cos(4.5*point*(Math.PI/180)) + 5) ) + "</TD></TR>";
     }
 	tableData += "</TABLE></BODY>";
-	document.write(tableData);
+	myRef = window.open(''+self.location,'mywin',
+'left=20,top=20,width=500,height=500,toolbar=1,resizable=0');
+mywin.document.write(tableData);
 }
 </SCRIPT>
 <P> 
