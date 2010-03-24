@@ -2,6 +2,37 @@
 <Module>
 <ModulePrefs title="hello world example" />
 <Content type="html"><![CDATA[
-Hello, world!
+<SCRIPT LANGUAGE="JavaScript"> 
+function calculate()
+{
+    var diameter = parseInt(document.parachute.diam.value);
+	var numGores = parseInt(document.parachute.gores.value);
+    
+	tableData = "<BODY BGCOLOR='white'  TEXT='black'>";
+	tableData += "Suggested Bear Weight (gm): " + Math.round(Math.pow((diameter/38.5),2));
+	tableData += "<BR>Plan Area (sq m): " + Math.round( ( Math.PI * Math.pow(diameter, 2) / 4 ) * Math.pow(10, -6) * 100) / 100;
+    tableData += "<TABLE BORDER=1 CELLSPACING=5 CELLPADDING=1 WIDTH=300>";
+	tableData += "<TR><TH>Point</TH><TH>Height</TH><TH>Half Gore Width (with seam)</TH></TR>";
+	for(point=0; point <= 20; point++)
+	{
+	    tableData += "<TR><TD>" + point + "</TD>";
+		tableData += "<TD>" + Math.round(((point * Math.PI * diameter)/80) + 5) + "</TD>";
+ 
+        tableData += "<TD>" + Math.round( ((Math.PI/2)*(diameter/numGores)*Math.cos(4.5*point*(Math.PI/180)) + 5) ) + "</TD></TR>";
+    }
+	tableData += "</TABLE></BODY>";
+	parent.results.document.write(tableData);
+}
+</SCRIPT>
+
+<STRONG><U><H2>Hemispheric Teddy Chute Calculations</H2></U></STRONG> 
+<P> 
+Enter the requirements for your chute size below and then click submit for a table of the required measurements.
+<P> 
+<FORM NAME="parachute" onSubmit="calculate();"> 
+<B>Chute Diameter (in mm): </B><INPUT TYPE="TEXT" LENGTH="10" NAME="diam"><BR> 
+<B>Number of Gores: </B><INPUT TYPE="TEXT" LENGTH="10" NAME="gores"> 
+<INPUT TYPE="SUBMIT" VALUE="Submit"> 
+</FORM>
 ]]></Content>
 </Module>
