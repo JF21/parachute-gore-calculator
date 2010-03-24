@@ -2,6 +2,9 @@
 <Module>
 <ModulePrefs title="hello world example" />
 <Content type="html"><![CDATA[
+<HTML> 
+<HEAD> 
+<TITLE>parachute sizes</TITLE> 
 <SCRIPT LANGUAGE="JavaScript"> 
 function calculate()
 {
@@ -23,8 +26,9 @@ function calculate()
 	tableData += "</TABLE></BODY>";
 	parent.results.document.write(tableData);
 }
-</SCRIPT>
-
+</SCRIPT> 
+</HEAD> 
+<BODY BGCOLOR="white"  TEXT="black"> 
 <STRONG><U><H2>Hemispheric Teddy Chute Calculations</H2></U></STRONG> 
 <P> 
 Enter the requirements for your chute size below and then click submit for a table of the required measurements.
@@ -33,6 +37,8 @@ Enter the requirements for your chute size below and then click submit for a tab
 <B>Chute Diameter (in mm): </B><INPUT TYPE="TEXT" LENGTH="10" NAME="diam"><BR> 
 <B>Number of Gores: </B><INPUT TYPE="TEXT" LENGTH="10" NAME="gores"> 
 <INPUT TYPE="SUBMIT" VALUE="Submit"> 
-</FORM>
+</FORM> 
+</BODY> 
+</HTML> 
 ]]></Content>
 </Module>
