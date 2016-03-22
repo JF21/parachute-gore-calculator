@@ -1,0 +1,2 @@
+When making a parachute for a water rocket, you need to know how to design the gore of the parachute.
+Enter the diameter and the number of gores required, and the points to plot out will be displayed below
